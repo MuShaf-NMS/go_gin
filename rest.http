@@ -1,0 +1,31 @@
+@host=http://localhost:8000
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI4OTY2YzA0Yy0zZjQxLTQyMzItYjQzYS05MzM3NDU3NDAzMTQiLCJleHAiOjE2NDQyMzcwNDAsImlhdCI6MTY0NDIyNjI0MH0.w9QUGDoVDM4updNz5MNPwCLmvUgE9WHm3hJCZOY7YBI
+
+POST  {{host}}/auth/login
+Content-Type: application/json
+
+{
+    "username": "MuShaf",
+    "password": "12345678"
+}
+
+###
+
+GET {{host}}/todo/1ebb9927-91b1-4e32-a09b-0e3bcdb152b8
+Authorization: Bearer {{token}}
+
+###
+
+GET {{host}}/todo/
+Authorization: Bearer {{token}}
+
+###
+
+POST {{host}}/todo/
+Authorization: Bearer {{token}}
+
+{
+    "name": "Todo 1",
+    "category": "skdlakdl",
+    "description": ""
+}
